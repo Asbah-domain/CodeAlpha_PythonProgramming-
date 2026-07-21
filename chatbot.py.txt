@@ -1,0 +1,36 @@
+import datetime
+
+def basic_chatbot():
+    print("--- Welcome to the CodeAlpha Rule-Based Chatbot! ---")
+    print("Type 'exit', 'quit', or 'bye' to end the conversation.\n")
+
+    while True:
+        user_input = input("You: ").lower().strip()
+
+        # Exit conditions
+        if user_input in ["exit", "quit", "bye", "goodbye"]:
+            print("Bot: Goodbye! Have a great day ahead! 👋")
+            break
+
+        # Rule-based responses
+        elif user_input in ["hello", "hi", "hey"]:
+            print("Bot: Hello! How can I assist you today?")
+        
+        elif "how are you" in user_input:
+            print("Bot: I'm just a bundle of Python code, but I'm doing great! How about you?")
+        
+        elif "your name" in user_input or "who are you" in user_input:
+            print("Bot: I am a simple rule-based AI chatbot built for my CodeAlpha project!")
+        
+        elif "time" in user_input or "date" in user_input:
+            now = datetime.datetime.now()
+            print(f"Bot: Current date and time is {now.strftime('%Y-%m-%d %H:%M:%S')}")
+            
+        elif "help" in user_input:
+            print("Bot: Sure! You can ask me about my name, the current time, or just say hi!")
+            
+        else:
+            print("Bot: I'm sorry, I don't understand that yet. Try asking me for 'help'!")
+
+if __name__ == "__main__":
+    basic_chatbot()
